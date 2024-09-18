@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 300vh;
+    overflow-x: hidden;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 2fr 3fr 2fr;
+}
+
+header .hero,
+main .products,
+footer .contact {
+    margin: 10vh 10vw 10vh 10vw;
+}
+
+header {
+    display: grid;
+    background-color: white;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: min-content;
+}
+
+header .background {
+    z-index: 1;
+    width: 125vw;
+    height: 100%;
+    background-color: darkturquoise;
+    transform: translate(-20vw, -20vh) rotate(-10deg);
+    box-shadow: grey 1px 1px 10px 1px;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+header .hero {
+    width: min(80vw, 1200px);
+    background-color: bisque;
+    z-index: 2;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+main {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+main .products {
+    width: 80vw;
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+}
+
+main .products .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 60px;
+    justify-items: center;
+}
+
+main .products .cards .card {
+    background-color: aquamarine;
+    min-width: 25vw;
+}
+
+footer {
+    background-color: darkturquoise;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+footer .contact {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 10fr;
+}
+
+footer .contact h2 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+footer .contact p {
+    grid-row: 2 / -1;
+    grid-column: 1 / 2;
+}
+
+footer .contact .contact-img {
+    background-color: blueviolet;
+    grid-row: 1 / -1;
+    grid-column: 2 / -1;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+    html, body {
+        min-height: 400vh;
+    }
+    
+    body {
+        grid-template-rows: 1fr 2fr 1fr;
+    }
+    
+    header .hero,
+    main .products,
+    footer .contact {
+        /*margin: 5vh 5vw 5vh 5vw;*/
+    }
+    
+    header .hero {
+        /*width: min(90vw, 1000px);*/
+    }
+    
+    main .products {
+        /*width: 90vw;*/
+        grid-template-rows: 1fr 30fr;
+    }
+    
+    main .products .cards {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 30px;
+        column-gap: 120px;
+    }
+
+    main .products .cards .card {
+        min-width: 35vw;
+    }
+
+    footer .contact {
+        grid-template-columns: 4fr 3fr;
+        grid-template-rows: 1fr 10fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    html, body {
+        min-height: 1200vh;
+    }
+    
+    body {
+        grid-template-rows: 1fr 3fr 1fr;
+    }
+    
+    header .hero,
+    main .products,
+    footer .contact {
+        margin: 5vh 5vw 5vh 5vw;
+    }
+    
+    header .hero {
+        width: min(90vw, 1000px);
+    }
+    
+    main .products {
+        width: 90vw;
+        grid-template-rows: 1fr 44fr;
+    }
+
+    main .products h2 {
+        text-align: center;
+    }
+    
+    main .products .cards {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        row-gap: 10px;
+    }
+
+    main .products .cards .card {
+        min-width: 80vw;
+        min-height: 60vh;
+        max-height: 110vh;
+    }
+
+    footer {
+        grid-template-rows: 1fr 1fr;
+    }
+
+    footer .contact {
+        width: 90vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 4fr;
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    footer .contact h2 {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+    
+    footer .contact p {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+    
+    footer .contact .contact-img {
+        grid-row: -1 / -1;
+        grid-column: -1 / -1;
+    }
+
+    footer .contact-img-mobile {
+        background-color: blueviolet;
+        grid-row: 2 / -1;
+        grid-column: 1 / 2;
+    }
+}
